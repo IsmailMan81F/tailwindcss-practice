@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SiTailwindcss } from "react-icons/si";
 import { IoMenu } from "react-icons/io5";
+import Hamburger from "./Hamburger";
 
 export default function Nav(params) {
   const links = ["Dashboard", "Team", "Projects", "Calendar"].map((link) => (
