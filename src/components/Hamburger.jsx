@@ -1,21 +1,19 @@
-import { useState } from "react";
-
-export default function Hamburger(params) {
-  const [open, setOpen] = useState(false);
-
+export default function Hamburger({ onClick, isOpen }) {
   return (
     <button
-      onClick={() => setOpen(!open)}
-      className="w-6 h-4 flex flex-col justify-between"
+      onClick={() => {
+        onClick();
+      }}
+      className="w-6 h-4 flex flex-col justify-between md:hidden hover:cursor-pointer"
     >
       <div
-        className={`duration-300 h-0.75 bg-white rounded ${open ? "rotate-35 w-6 origin-top-left" : "w-6"}`}
+        className={`duration-300 h-0.75 w-6 bg-white rounded ${isOpen && "rotate-45 translate-y-[230%] w-6.5"}`}
       ></div>
       <div
-        className={`duration-300 w-full h-0.75 bg-white rounded ${open ? "opacity-0" : "opacity-100"}`}
+        className={`duration-300 w-full h-0.75 bg-white rounded ${isOpen ? "opacity-0" : "opacity-100"}`}
       ></div>
       <div
-        className={`duration-300 h-0.75 bg-white rounded  ${open ? "-rotate-35 w-6 origin-bottom-left" : "w-6"}`}
+        className={`duration-300 h-0.75 bg-white rounded  ${isOpen && "-rotate-45 -translate-y-1.5 w-6.5"}`}
       ></div>
     </button>
   );

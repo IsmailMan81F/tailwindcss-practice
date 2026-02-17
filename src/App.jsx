@@ -1,7 +1,13 @@
 import Nav from "./components/Nav";
+import Hamburger from "./components/Hamburger";
 
 function App() {
-  return <Nav />;
+  return (
+    <div className="">
+      {" "}
+      <Nav />
+    </div>
+  );
 }
 
 export default App;
